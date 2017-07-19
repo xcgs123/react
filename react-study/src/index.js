@@ -6,20 +6,38 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route ,Link } from 'react-router-dom'
+import routes from './routes'
+
 import ToDoApp from './components/ToDoApp';
+import Home from './containers/home.js'
 
 document.querySelector('html').style['fontSize'] = 100 * document.documentElement.clientWidth/750+'px';
 
-class App extends React.Component {
-   render(){ // Every react component has a render method.
-     return( // Every render method returns jsx. Jsx looks like HTML, but it's actually javascript and functions a lot like xml, with self closing tags requiring the `/` within the tag in order to work propperly
-       <ToDoApp />
-     );
-   }
- }
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory()
+
+
+class App extends React.Component{
+    render() {
+        return (
+            <div style={{fontSize:'.3rem'}}>
+                <Link to="/home">home</Link>
+            </div>
+        );
+    }
+}
+
 
 ReactDOM.render(
-    <App />,
+    <Router history={history}>
+        <div>
+            <Route path="/" component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/toDoApp" component={ToDoApp} />
+        </div>
+    </Router>,
     document.getElementById('root')
 );
 
