@@ -1,6 +1,7 @@
 var path = require('path');
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: "./app/main.js",//已多次提及的唯一入口文件
   
   output: {
@@ -9,14 +10,20 @@ module.exports = {
   },
 
     module: {
-        loaders: [{
-          test: /\.jsx?$/,
-          exclude: /(node_modules|bower_components)/,
-          loader: 'babel', // 'babel-loader' is also a legal name to reference
-          query: {
-            presets: ['es2015','react']
-          }
-        }]
+        rules: [
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "es2015", "react"
+                        ]
+                    }
+                },
+                exclude: /node_modules/
+            }
+        ]
     },
 
   devServer: {
