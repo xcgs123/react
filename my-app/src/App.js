@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 // import About from './containers/about.js'
 import {
   Link
@@ -10,8 +9,8 @@ class App extends Component {
   render() {
     return (
       <ul>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/reactDemo">reactDemo</Link></li>
+        <li><Link to="/about">11About</Link></li>
+        <li><Link to="/reactDemo">2reactDemo</Link></li>
       </ul>
     );
   }
