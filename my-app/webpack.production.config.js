@@ -32,6 +32,10 @@ module.exports = {
                     }
                 }],
             })
+          },
+          {
+            test: /\.less$/,
+            loader: 'style-loader!css-loader!postcss-loader!less-loader'
           }
       ]
   },
@@ -39,8 +43,7 @@ module.exports = {
   devServer: {
     contentBase: "./build",//本地服务器所加载的页面所在的目录
     historyApiFallback: true,//不跳转
-    inline: true,//实时刷新
-    hot: true
+    inline: true//实时刷新
   },
 
   plugins: [
@@ -51,6 +54,5 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin("style.css"),
-    new webpack.HotModuleReplacementPlugin()
   ]
 }

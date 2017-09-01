@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import './about.css'
+import './about.less';
+import classNames from 'classnames';
 
 class About extends Component {
-  render() {
-    return (
-      <div className="app">
-        <input type="checkbox" id="awesome" autofocus />
-        <label for="awesome">Awesome!</label>
-        <br />
-        <input type="checkbox" id="awesome2" checked />
-        <label for="awesome2">Awesome!</label>
-      </div>
-    );
-  }
+    constructor(props){
+        super(props);
+        this.state = {
+            activeIndex: false
+        }
+    }
+
+    tabChange(){
+        this.setState({
+            activeIndex: !this.state.activeIndex
+        })
+    }
+
+    render() {
+        return (
+          <div className="main">
+            <div className={classNames('tab',{'active':this.state.activeIndex})} onClick={this.tabChange.bind(this)}>tab1</div>
+            <div className="tab">tab2</div>
+            <div className="tab">tab3</div>
+          </div>
+        );
+    }
 }
 
 
