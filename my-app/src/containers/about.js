@@ -6,23 +6,46 @@ class About extends Component {
     constructor(props){
         super(props);
         this.state = {
-            activeIndex: false
+            activeIndex:0
         }
     }
 
-    tabChange(){
+    tabChange(activeIndex){
         this.setState({
-            activeIndex: !this.state.activeIndex
+            activeIndex
         })
     }
 
+    getTabs(){
+        const items = ['tab1', 'tab2', 'tab3'];
+
+        return items.map((item,index)=>{
+            const {
+              activeIndex
+            } = this.state;
+            return (
+                <div ref={`tab${index}`} key={index} className={classNames('tab',{'active':activeIndex === index})}  onClick={this.tabChange.bind(this,index)}>
+                  {item}
+                </div>
+            );
+        });
+    }
+
     render() {
+        const {
+          activeIndex
+        } = this.state;
+
         return (
-          <div className="main">
-            <div className={classNames('tab',{'active':this.state.activeIndex})} onClick={this.tabChange.bind(this)}>tab1</div>
-            <div className="tab">tab2</div>
-            <div className="tab">tab3</div>
-          </div>
+            <div>
+                <div className="main">
+                    {this.getTabs()}
+                </div>
+
+                {
+                   activeIndex===0 ? <div>1111</div> : <div>22</div>
+                }
+            </div>
         );
     }
 }

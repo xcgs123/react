@@ -8,8 +8,9 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom'
-import About from './containers/about.js'
-import ReactDemo from './containers/ReactDemo.js'
+import About from './containers/about.js';
+import ReactDemo from './containers/ReactDemo.js';
+import PullRefresh from './containers/PullRefresh/index.js';
 
 ReactDOM.render(
     <Router>
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Route path="/home" component={App} />
             <Route path="/about" component={About} />
             <Route path="/reactDemo" component={ReactDemo} />
+            <Route path="/pullRefresh" component={PullRefresh} />
         </div>
     </Router>, 
     document.getElementById('root'));
