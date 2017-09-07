@@ -1,44 +1,20 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-var React = require('react'),
-    ReactIScroll = require('react-iscroll'),
-    iScroll = require('iscroll');
 
-var PullRefresh = React.createClass({
-  getDefaultProps: function() {
-    return ({
-      options: {
-        mouseWheel: true,
-        scrollbars: true
+class PullRefresh extends Component{
+  constructor(props){
+      super(props);
+      this.state = {
+          activeIndex:0
       }
-    })
-  },
-  onScrollStart: function() {
-    console.log("iScroll starts scrolling")
-  },
-  render: function() {
-    var i = 0, len = 1000, listOfLi = [];
+  }
 
-    for(i; i < len; i++) {
-      listOfLi.push(<li key={i}>Row {i+1}</li>)
-    }
-
-    return (
-      <div style={height: '100vh'}>
-        <h1>Example of scrollable list</h1>
-        <ReactIScroll iScroll={iScroll}
-                      options={this.props.options}
-                      onScrollStart={this.onScrollStart}>
-          <ul>
-            {listOfLi}
-          </ul>
-        </ReactIScroll>
-      </div>
+  render(){
+    return(
+      <div>1</div>
     )
   }
-})
-
-
+}
 
 export default PullRefresh;
