@@ -8,23 +8,23 @@ class PullRefresh extends Component{
   constructor(props){
       super(props);
       this.state = {
-          activeIndex:0
+          loading: false
       }
   }
 
   doRefresh(){
-    alert(11)
-    // return (
-    //   <div>1111</div>
-    // )
+    this.setState({
+        loading: true
+    })
   }
 
   render(){
     return(
       <div className="refresh">
-        <div onClick={this.doRefresh}>点击刷新</div>
+        <div onClick={this.doRefresh.bind(this)}>点击刷新</div>
 
-        <Loading />
+        {this.state.loading && <Loading />}
+
         <div className='containers'>啦啦啦啦啦啦啦啦啦啦</div>
       </div>
     )
