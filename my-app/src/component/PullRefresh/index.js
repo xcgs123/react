@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import Loaders from '../Loaders';
+import Loaders from '../Loaders/index.js';
 
-import './index.css';
+
+import './index.less';
 /**
  *  下拉刷新
  */
@@ -88,7 +89,7 @@ export default class PullToRefresh extends Component {
 
         this.setState({
             touching: true,
-            touchId: e.targetTouches[0].identifier,
+            touchId: e.targetTouches[0].identifier,   //???
             ogY: this.state.pullPercent === 0 ? e.targetTouches[0].pageY : e.targetTouches[0].pageY - this.state.pullPercent,
             animating: false,
             initScrollTop: $content.scrollTop
@@ -185,4 +186,5 @@ export default class PullToRefresh extends Component {
             </div>
         );
     }
+
 }

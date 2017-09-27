@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import './index.less';
-import Loading from '../../component/Loading/Loading.js'
+import Loading from '../../component/Loading/Loading.js';
+import PullToRefresh from '../../component/PullRefresh/index.js';
+import Loaders from '../../component/Loaders/index.js';
 
 
 class PullRefresh extends Component{
@@ -20,13 +22,9 @@ class PullRefresh extends Component{
 
   render(){
     return(
-      <div className="refresh">
-        <div onClick={this.doRefresh.bind(this)}>点击刷新</div>
-
-        {this.state.loading && <Loading />}
-
-        <div className='containers'>啦啦啦啦啦啦啦啦啦啦</div>
-      </div>
+        <PullToRefresh>
+          <div>下拉刷新11</div>
+        </PullToRefresh>
     )
   }
 }

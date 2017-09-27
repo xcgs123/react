@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './about.less';
 import classNames from 'classnames';
+import PullToRefresh from '../component/PullRefresh/index.js';
 
 class About extends Component {
     constructor(props){
@@ -42,9 +43,12 @@ class About extends Component {
                     {this.getTabs()}
                 </div>
 
+                <PullToRefresh height={300} >
+
                 {
                    activeIndex===0 ? <div>1111</div> : <div>22</div>
                 }
+                 </PullToRefresh>
             </div>
         );
     }
