@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './about.less';
 import classNames from 'classnames';
 import PullToRefresh from '../component/PullRefresh/index.js';
+import Loaders from '../component/Loaders/index.js';
 
 class About extends Component {
     constructor(props){

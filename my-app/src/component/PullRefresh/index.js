@@ -39,7 +39,7 @@ export default class PullToRefresh extends Component {
 
     static defaultProps = {
         height: '100%',
-        loaderHeight: 50,
+        loaderHeight: 50, 
         onRefresh: true,
         onRefreshHandle: (resolve, reject) => setTimeout( ()=> resolve(), 1000),
         loaderLoadingIcon: <Loaders loadingStyle="quarter-ring-spin" />,

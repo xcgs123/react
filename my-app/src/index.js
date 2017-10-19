@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import {Provider} from "react-redux";
-// import routes from "./routes/index.js"
+import {Provider} from "react-redux";
+import Root from "./routes/index.js"
 import {
   BrowserRouter as Router,
   Route,
@@ -11,14 +11,13 @@ import {
 import About from './containers/about.js';
 import ReactDemo from './containers/ReactDemo.js';
 import PullRefresh from './containers/PullRefresh/index.js';
+import { createStore } from 'redux';
+import todoApp from './reducers/reducers.js'
+
+let store = createStore(todoApp);
 
 ReactDOM.render(
-    <Router>
-        <div>
-            <Route path="/home" component={App} />
-            <Route path="/about" component={About} />
-            <Route path="/reactDemo" component={ReactDemo} />
-            <Route path="/pullRefresh" component={PullRefresh} />
-        </div>
-    </Router>, 
+    <Root store={store}/>, 
     document.getElementById('root'));
+
+

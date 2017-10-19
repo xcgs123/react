@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-// import About from './containers/about.js'
+import About from './containers/about.js';
 import {
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
+import React, { Component, PropTypes } from 'react'
 
-
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <ul>
@@ -16,7 +15,3 @@ class App extends Component {
     );
   }
 }
-
-
-
-export default App;
