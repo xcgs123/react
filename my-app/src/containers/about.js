@@ -3,6 +3,7 @@ import './about.less';
 import classNames from 'classnames';
 import PullToRefresh from '../component/PullRefresh/index.js';
 import Loaders from '../component/Loaders/index.js';
+import Carousel from '../component/Carousel';
 
 class About extends Component {
     constructor(props){
@@ -50,6 +51,8 @@ class About extends Component {
                    activeIndex===0 ? <div>1111</div> : <div>22</div>
                 }
                  </PullToRefresh>
+                 
+                 <Carousel />
             </div>
         );
     }

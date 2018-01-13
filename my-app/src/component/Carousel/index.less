@@ -1,0 +1,49 @@
+/*
+* @Author: zuoyan
+* @Date:   2017-12-27 16:17:10
+* @Last Modified by:   zuoyan
+* @Last Modified time: 2017-12-27 16:21:44
+*/
+.container{
+	overflow: hidden;
+	position: relative;
+    width: 375px;
+    height: 300px;
+    border: 3px solid #333;
+    box-sizing: border-box;
+	.parent{
+        .list{
+            width: 1125px;
+            height: 300px;
+        }
+	    .content{
+			width: 375px;
+			height: 300px;
+			float: left;
+		}
+	}
+	.buttons {
+        position: absolute;
+        left: 250px;
+        bottom: 20px;
+        z-index: 2;
+        height: 10px;
+        width: 100px;
+        span {
+        	display: inline-block;
+            float: left;
+            margin-right: 5px;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+        .active{
+          background: red;  
+        }
+    }
+}
+
+

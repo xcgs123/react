@@ -1,0 +1,1 @@
+import React,{Component} from 'react';import './index.less';export default class Header extends Component{    constructor(props){        super(props);    }    render(){        return(            <div className="component-header">                <h1 className="caption">React Music Player</h1>            </div>        )    }}

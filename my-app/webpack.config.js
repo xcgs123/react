@@ -26,17 +26,24 @@ module.exports = {
             use:[
               {
                 loader:"style-loader"
-              },{
+              },
+              {
                 loader:"css-loader",
                 options:{
                   module: true
                 }
-              }
-            ]
+              }]
           },
           {
             test: /\.less$/,
             loader: 'style-loader!css-loader!postcss-loader!less-loader'
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            query: {
+              limit: 10000,
+            }
           }
       ]
   },
